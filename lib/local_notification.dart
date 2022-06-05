@@ -39,8 +39,9 @@ class LocalNotificationState extends State<LocalNotification> {
       "id", "channel", channelDescription: 'your channel description',
       importance: Importance.max,
       priority: Priority.high,
-      icon: "mipmap/ic_launcher",
-      // ticker: 'ticker',
+      sound: RawResourceAndroidNotificationSound('alarm_clock'),
+      icon: "app_icon",   // Add icon on path android/app/main/res/drawable/app_icon.png
+      ticker: 'ticker',
     );
 
     var ios = const IOSNotificationDetails();
