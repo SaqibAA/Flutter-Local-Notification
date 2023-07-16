@@ -55,9 +55,14 @@ class LocalNotification {
           priority: Priority.high,
           sound: RawResourceAndroidNotificationSound('alarm_clock'),
           actions: <AndroidNotificationAction>[
-            AndroidNotificationAction('id_1', 'Action 1'),
-            AndroidNotificationAction('id_2', 'Action 2'),
-            AndroidNotificationAction('id_3', 'Action 3'),
+            AndroidNotificationAction(
+              'id_1',
+              'Cancel',
+              titleColor: Colors.red,
+            ),
+            AndroidNotificationAction('id_2', 'Type Here',
+                inputs: [AndroidNotificationActionInput(label: "Type Here")]),
+            AndroidNotificationAction('id_3', 'Open', showsUserInterface: true),
           ],
         ),
         iOS: DarwinNotificationDetails());
@@ -67,5 +72,13 @@ class LocalNotification {
       {int id = 1, String? title, String? body, String? payLoad}) async {
     return notificationsPlugin
         .show(id, title, body, await notificationDetails(), payload: payLoad);
+  }
+
+  Future cancelNotification(int id) async {
+    await notificationsPlugin.cancel(id);
+  }
+
+  Future cancelAllNotification() async {
+    await notificationsPlugin.cancelAll();
   }
 }
