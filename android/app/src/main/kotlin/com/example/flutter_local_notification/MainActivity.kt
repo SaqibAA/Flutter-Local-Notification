@@ -1,4 +1,4 @@
-package com.example.flutter_local_notification
+package com.asadeveloper.flutter_local_notification
 
 import io.flutter.embedding.android.FlutterActivity
 

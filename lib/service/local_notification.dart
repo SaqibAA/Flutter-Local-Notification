@@ -53,6 +53,7 @@ class LocalNotification {
           channelDescription: 'your channel description',
           importance: Importance.max,
           priority: Priority.high,
+          ticker: 'ticker',
           sound: RawResourceAndroidNotificationSound('alarm_clock'),
           actions: <AndroidNotificationAction>[
             AndroidNotificationAction(
